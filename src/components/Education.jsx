@@ -3,11 +3,11 @@ import { GraduationCap, Calendar, MapPin } from 'lucide-react'
 const educationData = [
   {
     degree: "Bachelor's in Computer Science",
-    institution: 'University',
-    period: '2021 - Present',
-    location: 'Pakistan',
+    institution: 'Capital University of Science and Technology',
+    period: '2022 - 2026',
+    location: 'Rawalpindi, Pakistan',
     description:
-      'Currently pursuing a degree in Computer Science with a focus on software development, algorithms, and artificial intelligence. Engaged in various academic projects and coursework covering data structures, machine learning, and web technologies.',
+      'Graduated with a degree in Computer Science with a focus on software development, algorithms, and artificial intelligence. Completed various academic projects and coursework covering data structures, machine learning, and web technologies.',
     courses: [
       'Data Structures & Algorithms',
       'Object-Oriented Programming',

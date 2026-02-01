@@ -21,12 +21,12 @@ export default function Hero() {
 
           {/* Name */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 dark:text-white mb-6 animate-slide-up animation-delay-200">
-            A <span className="gradient-text">Web Developer</span>
+            <span className="gradient-text">Muhammad Shahab Wasim</span>
           </h1>
 
           {/* Title */}
           <h2 className="text-xl sm:text-2xl md:text-3xl text-gray-600 dark:text-gray-300 mb-8 animate-slide-up animation-delay-400">
-            Computer Science Undergraduate
+            Computer Science Graduate
           </h2>
 
           {/* Description */}

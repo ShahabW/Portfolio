@@ -37,7 +37,7 @@ export default function Footer() {
               <span>Portfolio</span>
             </a>
             <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-4">
-              A Computer Science undergraduate passionate about building modern
+              A Computer Science graduate passionate about building modern
               web applications and exploring AI technologies.
             </p>
             {/* Social links */}
@@ -109,7 +109,7 @@ export default function Footer() {
                   mshahabw61@gmail.com
                 </a>
               </li>
-              <li>Pakistan</li>
+              <li>Rawalpindi, Pakistan</li>
             </ul>
           </div>
         </div>

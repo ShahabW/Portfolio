@@ -23,7 +23,7 @@ const contactInfo = [
   {
     icon: MapPin,
     label: 'Location',
-    value: 'Pakistan',
+    value: 'Rawalpindi, Pakistan',
     href: null,
   },
 ]
@@ -47,15 +47,29 @@ export default function Contact() {
     e.preventDefault()
     setIsSubmitting(true)
 
-    // Simulate form submission (frontend only)
-    // Replace with actual form submission logic (e.g., Formspree, EmailJS, or backend API)
     try {
-      await new Promise((resolve) => setTimeout(resolve, 1500))
-      setStatus({
-        type: 'success',
-        message: 'Message sent successfully! I\'ll get back to you soon.',
+      const response = await fetch('https://formspree.io/f/xojwzejr', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+        }),
       })
-      setFormData({ name: '', email: '', subject: '', message: '' })
+
+      if (response.ok) {
+        setStatus({
+          type: 'success',
+          message: 'Message sent successfully! I\'ll get back to you soon.',
+        })
+        setFormData({ name: '', email: '', subject: '', message: '' })
+      } else {
+        throw new Error('Failed to send')
+      }
     } catch (error) {
       setStatus({
         type: 'error',

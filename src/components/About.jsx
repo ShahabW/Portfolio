@@ -57,12 +57,12 @@ export default function About() {
             {/* Text content */}
             <div>
               <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
-                Computer Science Undergraduate with a Passion for Building
+                Computer Science Graduate with a Passion for Building
               </h3>
               
               <div className="space-y-4 text-gray-600 dark:text-gray-400 leading-relaxed">
                 <p>
-                  I'm a Computer Science undergraduate driven by curiosity and a passion for technology.
+                  I'm a Computer Science graduate driven by curiosity and a passion for technology.
                   My journey in programming started with web development, and has since expanded to include
                   artificial intelligence, machine learning, and game development.
                 </p>
