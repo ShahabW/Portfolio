@@ -4,6 +4,12 @@ import { ExternalLink, Github, Star, GitFork, Calendar, AlertCircle, RefreshCw }
 // GitHub username - Change this to your GitHub username
 const GITHUB_USERNAME = 'ShahabW'
 
+// Featured repositories - these will appear first
+const FEATURED_REPOS = [
+  'Final-Year-Project-Website',
+  'Final-Year-Project-Extension',
+]
+
 // Skeleton loading component
 function ProjectSkeleton() {
   return (
@@ -168,7 +174,15 @@ export default function Projects() {
       // Filter out forks and sort by most recent update
       const filteredRepos = data
         .filter((repo) => !repo.fork)
-        .sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at))
+        .sort((a, b) => {
+          // Featured repos come first
+          const aFeatured = FEATURED_REPOS.includes(a.name)
+          const bFeatured = FEATURED_REPOS.includes(b.name)
+          if (aFeatured && !bFeatured) return -1
+          if (!aFeatured && bFeatured) return 1
+          // Then sort by most recent update
+          return new Date(b.updated_at) - new Date(a.updated_at)
+        })
 
       setRepos(filteredRepos)
     } catch (err) {

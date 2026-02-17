@@ -52,7 +52,7 @@ export default function Hero() {
           {/* Social Links */}
           <div className="flex items-center justify-center gap-4">
             <a
-              href="https://github.com"
+              href="https://github.com/ShahabW"
               target="_blank"
               rel="noopener noreferrer"
               className="p-3 text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50 dark:hover:bg-primary-900/20 rounded-full transition-all"
