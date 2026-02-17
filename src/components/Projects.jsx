@@ -8,6 +8,7 @@ const GITHUB_USERNAME = 'ShahabW'
 const FEATURED_REPOS = [
   'Final-Year-Project-Website',
   'Final-Year-Project-Extension',
+  'Malware-Detection-Model',
 ]
 
 // Skeleton loading component
