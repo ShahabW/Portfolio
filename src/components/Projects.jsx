@@ -6,10 +6,33 @@ const GITHUB_USERNAME = 'ShahabW'
 
 // Featured repositories - these will appear first
 const FEATURED_REPOS = [
+  'blush-nail-lounge',
+  'luna-sol-spa',
+  'realtor-demo',
+  'stylist-demo',
   'Final-Year-Project-Website',
   'Final-Year-Project-Extension',
   'Malware-Detection-Model',
 ]
+
+const projectMetadata = {
+  'blush-nail-lounge': {
+    description: 'A polished salon landing page with a soft, modern visual identity.',
+    topics: ['React', 'Salon', 'Responsive Design'],
+  },
+  'luna-sol-spa': {
+    description: 'A calming spa website focused on wellness services and appointment discovery.',
+    topics: ['React', 'Wellness', 'Responsive Design'],
+  },
+  'realtor-demo': {
+    description: 'A real estate showcase experience for browsing featured properties.',
+    topics: ['HTML', 'Real Estate', 'Responsive Design'],
+  },
+  'stylist-demo': {
+    description: 'A stylish portfolio and service website for a modern hair stylist.',
+    topics: ['React', 'Portfolio', 'Responsive Design'],
+  },
+}
 
 // Skeleton loading component
 function ProjectSkeleton() {
@@ -106,6 +129,30 @@ function ProjectCard({ repo }) {
         </div>
       )}
 
+      {/* Links */}
+      <div className="flex flex-wrap gap-3 mb-4">
+        {repo.homepage && (
+          <a
+            href={repo.homepage}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 text-sm font-medium text-primary-600 dark:text-primary-400 hover:underline"
+          >
+            Live demo
+            <ExternalLink className="w-4 h-4" />
+          </a>
+        )}
+        <a
+          href={repo.html_url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-1.5 text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400"
+        >
+          Source
+          <Github className="w-4 h-4" />
+        </a>
+      </div>
+
       {/* Footer */}
       <div className="flex items-center justify-between text-sm text-gray-500 dark:text-gray-500 mt-auto pt-4 border-t border-gray-100 dark:border-gray-800">
         <div className="flex items-center gap-4">
@@ -175,6 +222,11 @@ export default function Projects() {
       // Filter out forks and sort by most recent update
       const filteredRepos = data
         .filter((repo) => !repo.fork)
+        .map((repo) => ({
+          ...repo,
+          ...projectMetadata[repo.name],
+          topics: projectMetadata[repo.name]?.topics || repo.topics,
+        }))
         .sort((a, b) => {
           // Featured repos come first
           const aFeatured = FEATURED_REPOS.includes(a.name)
